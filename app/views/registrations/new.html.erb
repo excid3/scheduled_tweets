@@ -1,13 +1,7 @@
 <h1>Sign Up</h1>
 
 <%= form_with model: @user, url: sign_up_path do |form| %>
-  <% if @user.errors.any? %>
-    <div class="alert alert-danger">
-      <% @user.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render "shared/form_errors", form: form %>
 
   <div class="mb-3">
     <%= form.label :email %>
